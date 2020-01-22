@@ -18,20 +18,21 @@ public class HasPair {
 
         int sumValue = sc.nextInt();
 
-        hasPairWithSum(numArray,sumValue);
+        boolean found = hasPairWithSum(numArray,sumValue);
     }
 
-    public static void hasPairWithSum(int [] numArray,int sum){
+    public static boolean hasPairWithSum(int [] numArray,int sum){
         HashSet<Integer> pairSet = new HashSet<Integer>();
         System.out.println("hello");
         for (int i:numArray){
             if(pairSet.contains(i)){
                 System.out.println("Found the pair for the sum "+sum);
-                break;
+                return true;
             }
             else{
                 pairSet.add(sum-i);
             }
         }
+        return false;
     }
 }
